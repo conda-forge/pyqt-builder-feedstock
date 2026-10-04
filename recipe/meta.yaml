@@ -1,13 +1,13 @@
 {% set name = "PyQt-builder" %}
-{% set version = "1.18.2" %}
+{% set version = "1.20.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_').lower() }}-{{ version }}.tar.gz
-  sha256: 56dfea461484a87a8f0c8b0229190defc436d7ec5de71102e20b35e5639180bc
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_').lower() }}-{{ version }}.tar.gz
+  sha256: 267ac1ee1593c67884f3c9cb6566f72a92ca28353050fc9d087433c28c74a889
   patches:
     - patches/0001-Use-conda-sysroot-when-building-recipes.patch
     - patches/0002-disable-test-execution-cross.patch
@@ -15,7 +15,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - pyqt-bundle = pyqtbuild.bundle.bundle_main:main
