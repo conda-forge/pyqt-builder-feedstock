@@ -18,10 +18,11 @@ Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table><tr>
+    <td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=15394&branchName=main">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyqt-builder-feedstock?branchName=main">
+      <a href="https://github.com/conda-forge/pyqt-builder-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/pyqt-builder-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
       </a>
     </td>
   </tr>
@@ -44,31 +45,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `pyqt-builder` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install pyqt-builder
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install pyqt-builder
 ```
 
-It is possible to list all of the versions of `pyqt-builder` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add pyqt-builder
+# for installing globally
+pixi global install pyqt-builder
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `pyqt-builder` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search pyqt-builder --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search pyqt-builder --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search pyqt-builder --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -80,6 +123,8 @@ mamba repoquery whoneeds pyqt-builder --channel conda-forge
 # List dependencies of `pyqt-builder`:
 mamba repoquery depends pyqt-builder --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
